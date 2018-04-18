@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    kafka:
+        container_name: kafka_local
+        image: spotify/kafka
+        environment:
+            ADVERTISED_HOST: 127.0.0.1
+            ADVERTISED_PORT: 9092
+        ports:
+            - 2182:2181
+            - 9092:9092
+        network_mode: bridge
