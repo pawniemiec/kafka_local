@@ -23,7 +23,7 @@ then
 fi
 
 test_kafka_broker () {
-    echo dump | nc "$1" "$2" > /dev/null
+    nc -z "$1" "$2" > /dev/null
     EC=$?
     if [ ${EC} == 0 ]
         echo dump | nc "$1" "$2" grep brokers |  grep "$3" > /dev/null
